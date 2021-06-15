@@ -13,22 +13,22 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-private static final String BUNDLE_CURRENT_INDEX = "BUNDLE_CURRENT_INDEX";
-ImageView imageView;
-Random mRandom;
-int[] mPictures = {
-        R.drawable.beach,
-        R.drawable.bike,
-        R.drawable.football,
-        R.drawable.museum,
-        R.drawable.park,
-        R.drawable.restaurant,
-        R.drawable.running,
-        R.drawable.shop,
-        R.drawable.swimming,
-        R.drawable.walking,
-};
- int mCurrentIndex = 0;
+    private static final String BUNDLE_CURRENT_INDEX = "BUNDLE_CURRENT_INDEX";
+    ImageView imageView;
+    Random mRandom;
+    int[] mPictures = {
+            R.drawable.beach,
+            R.drawable.bike,
+            R.drawable.football,
+            R.drawable.museum,
+            R.drawable.park,
+            R.drawable.restaurant,
+            R.drawable.running,
+            R.drawable.shop,
+            R.drawable.swimming,
+            R.drawable.walking,
+    };
+    int mCurrentIndex = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +58,7 @@ int[] mPictures = {
     public void random(View view){
         if(mCurrentIndex < 10){
             mCurrentIndex = mRandom.nextInt(10);
-           showImage();
+            showImage();
         }
 
     }
@@ -77,17 +77,17 @@ int[] mPictures = {
 
         }
     }
-public void back(View view){
-    if(mCurrentIndex == 0) {
-        mCurrentIndex = 10;
-        mCurrentIndex = mCurrentIndex - 1;
-        showImage();
-    }else{
-        mCurrentIndex = mCurrentIndex - 1;
-        showImage();
-    }
+    public void back(View view){
+        if(mCurrentIndex == 0) {
+            mCurrentIndex = 10;
+            mCurrentIndex = mCurrentIndex - 1;
+            showImage();
+        }else{
+            mCurrentIndex = mCurrentIndex - 1;
+            showImage();
+        }
 
-}
+    }
 
 
 }
