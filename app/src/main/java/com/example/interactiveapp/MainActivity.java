@@ -8,14 +8,17 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private static final String BUNDLE_CURRENT_INDEX = "BUNDLE_CURRENT_INDEX";
     ImageView imageView;
     Random mRandom;
+    TextView textView;
     int[] mPictures = {
             R.drawable.beach,
             R.drawable.bike,
@@ -28,12 +31,25 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.swimming,
             R.drawable.walking,
     };
+String[] mText = {
+        "Beach",
+        "Bike",
+        "Football",
+        "Museum",
+        "Park",
+        "Restaurant",
+        "Running",
+        "Shop",
+        "Swimming",
+        "Walking"
+};
     int mCurrentIndex = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imageView = findViewById(R.id.picnic);
+        textView = findViewById(R.id.picnicName);
         mRandom = new Random();
     }
 
@@ -65,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
     public void showImage(){
         Drawable picnicDrawable = ContextCompat.getDrawable(this, mPictures[mCurrentIndex]);
         imageView.setImageDrawable(picnicDrawable);
+        textView.setText(mText[mCurrentIndex]);
     }
     public void next(View view){
         if(mCurrentIndex == 9 ) {
